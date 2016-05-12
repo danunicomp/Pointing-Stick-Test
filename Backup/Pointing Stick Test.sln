@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Pointing Stick Test", "Pointing Stick Test.vbproj", "{72F3A147-000E-40D9-BAC2-29F1C7062FEA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{72F3A147-000E-40D9-BAC2-29F1C7062FEA}.Debug.ActiveCfg = Debug|.NET
+		{72F3A147-000E-40D9-BAC2-29F1C7062FEA}.Debug.Build.0 = Debug|.NET
+		{72F3A147-000E-40D9-BAC2-29F1C7062FEA}.Release.ActiveCfg = Release|.NET
+		{72F3A147-000E-40D9-BAC2-29F1C7062FEA}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
