@@ -1,0 +1,14 @@
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.exe
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.pdb
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\bin\Pointing Stick Test.exe
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\bin\Pointing Stick Test.pdb
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\bin\Pointing Stick Test.xml
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.vbprojResolveAssemblyReference.cache
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing_Stick_Test.frmPSTest.resources
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.vbproj.GenerateResource.Cache
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.xml
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\bin\Pointing Stick Test.exe.manifest
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\bin\Pointing Stick Test.application
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.TrustInfo.xml
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.exe.manifest
+Z:\CLOUD\GITHUB\Pointing-Stick-Test\obj\Debug\Pointing Stick Test.application

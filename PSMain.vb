@@ -39,32 +39,48 @@ Public Class frmPSTest
     Friend WithEvents txtYpos As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btnRememberPos As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtRememberX As TextBox
+    Friend WithEvents txtRememberY As TextBox
+    Friend WithEvents btnDriftResult As Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim resources As System.Resources.ResourceManager = New System.Resources.ResourceManager(GetType(frmPSTest))
-        Me.picTestBox = New System.Windows.Forms.PictureBox
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.btnLeftClick = New System.Windows.Forms.Button
-        Me.btnRightClick = New System.Windows.Forms.Button
-        Me.btnExit = New System.Windows.Forms.Button
-        Me.lblMouseCoord = New System.Windows.Forms.Label
-        Me.txtXpos = New System.Windows.Forms.TextBox
-        Me.txtYpos = New System.Windows.Forms.TextBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Panel1 = New System.Windows.Forms.Panel
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPSTest))
+        Me.picTestBox = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnLeftClick = New System.Windows.Forms.Button()
+        Me.btnRightClick = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.lblMouseCoord = New System.Windows.Forms.Label()
+        Me.txtXpos = New System.Windows.Forms.TextBox()
+        Me.txtYpos = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnRememberPos = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtRememberX = New System.Windows.Forms.TextBox()
+        Me.txtRememberY = New System.Windows.Forms.TextBox()
+        Me.btnDriftResult = New System.Windows.Forms.Button()
+        CType(Me.picTestBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'picTestBox
         '
         Me.picTestBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picTestBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.picTestBox.Location = New System.Drawing.Point(8, 16)
         Me.picTestBox.Name = "picTestBox"
-        Me.picTestBox.Size = New System.Drawing.Size(496, 280)
+        Me.picTestBox.Size = New System.Drawing.Size(496, 290)
         Me.picTestBox.TabIndex = 1
         Me.picTestBox.TabStop = False
         '
@@ -72,6 +88,7 @@ Public Class frmPSTest
         '
         Me.Button1.Location = New System.Drawing.Point(424, 312)
         Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "F1 - Restart"
         '
@@ -93,8 +110,9 @@ Public Class frmPSTest
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(424, 344)
+        Me.btnExit.Location = New System.Drawing.Point(424, 381)
         Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(75, 23)
         Me.btnExit.TabIndex = 6
         Me.btnExit.Text = "F10 - Exit"
         '
@@ -105,7 +123,7 @@ Public Class frmPSTest
         Me.lblMouseCoord.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMouseCoord.Location = New System.Drawing.Point(8, 8)
         Me.lblMouseCoord.Name = "lblMouseCoord"
-        Me.lblMouseCoord.Size = New System.Drawing.Size(123, 21)
+        Me.lblMouseCoord.Size = New System.Drawing.Size(127, 18)
         Me.lblMouseCoord.TabIndex = 7
         Me.lblMouseCoord.Text = "Mouse Coordinates"
         Me.lblMouseCoord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -117,7 +135,6 @@ Public Class frmPSTest
         Me.txtXpos.Name = "txtXpos"
         Me.txtXpos.Size = New System.Drawing.Size(32, 20)
         Me.txtXpos.TabIndex = 8
-        Me.txtXpos.Text = ""
         Me.txtXpos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtYpos
@@ -127,7 +144,6 @@ Public Class frmPSTest
         Me.txtYpos.Name = "txtYpos"
         Me.txtYpos.Size = New System.Drawing.Size(32, 20)
         Me.txtYpos.TabIndex = 9
-        Me.txtYpos.Text = ""
         Me.txtYpos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label1
@@ -136,7 +152,7 @@ Public Class frmPSTest
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(80, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 18)
+        Me.Label1.Size = New System.Drawing.Size(20, 16)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Y:"
         '
@@ -146,7 +162,7 @@ Public Class frmPSTest
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(16, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(17, 18)
+        Me.Label2.Size = New System.Drawing.Size(19, 16)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "X:"
         '
@@ -163,10 +179,78 @@ Public Class frmPSTest
         Me.Panel1.Size = New System.Drawing.Size(144, 64)
         Me.Panel1.TabIndex = 12
         '
+        'btnRememberPos
+        '
+        Me.btnRememberPos.Location = New System.Drawing.Point(424, 346)
+        Me.btnRememberPos.Name = "btnRememberPos"
+        Me.btnRememberPos.Size = New System.Drawing.Size(75, 23)
+        Me.btnRememberPos.TabIndex = 13
+        Me.btnRememberPos.Text = "F4 - Lock"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Controls.Add(Me.txtRememberX)
+        Me.Panel2.Controls.Add(Me.txtRememberY)
+        Me.Panel2.Location = New System.Drawing.Point(198, 382)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(146, 31)
+        Me.Panel2.TabIndex = 14
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(8, 8)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(19, 16)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "X:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(72, 8)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(20, 16)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Y:"
+        '
+        'txtRememberX
+        '
+        Me.txtRememberX.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.txtRememberX.Location = New System.Drawing.Point(24, 8)
+        Me.txtRememberX.Name = "txtRememberX"
+        Me.txtRememberX.Size = New System.Drawing.Size(32, 20)
+        Me.txtRememberX.TabIndex = 12
+        Me.txtRememberX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtRememberY
+        '
+        Me.txtRememberY.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.txtRememberY.Location = New System.Drawing.Point(88, 8)
+        Me.txtRememberY.Name = "txtRememberY"
+        Me.txtRememberY.Size = New System.Drawing.Size(32, 20)
+        Me.txtRememberY.TabIndex = 13
+        Me.txtRememberY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnDriftResult
+        '
+        Me.btnDriftResult.Location = New System.Drawing.Point(16, 359)
+        Me.btnDriftResult.Name = "btnDriftResult"
+        Me.btnDriftResult.Size = New System.Drawing.Size(171, 45)
+        Me.btnDriftResult.TabIndex = 15
+        Me.btnDriftResult.UseVisualStyleBackColor = True
+        '
         'frmPSTest
         '
         Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
-        Me.ClientSize = New System.Drawing.Size(512, 382)
+        Me.ClientSize = New System.Drawing.Size(512, 416)
+        Me.Controls.Add(Me.btnDriftResult)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.btnRememberPos)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnRightClick)
@@ -178,7 +262,11 @@ Public Class frmPSTest
         Me.Name = "frmPSTest"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Unicomp PS Test"
+        CType(Me.picTestBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -195,6 +283,11 @@ Public Class frmPSTest
     Private iLastPosX, iLastPosY As Integer
 
     Private bDrawingMode As Boolean
+
+    Private bTestDriftMode As Boolean
+
+    Private VERSION = "1.2.13052016"
+
 
 
     Private Sub picTestBox_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles picTestBox.MouseMove
@@ -224,16 +317,24 @@ Public Class frmPSTest
 
         txtXpos.Text = xy.X
         txtYpos.Text = xy.Y
+
+        If bTestDriftMode Then
+            Me.btnDriftResult.Text = "DRIFT DETECTED"
+            Me.btnDriftResult.BackColor = Color.Red
+            bTestDriftMode = False
+        End If
+
     End Sub
 
 
     Protected Overrides Function ProcessDialogKey(ByVal keydata As System.Windows.Forms.Keys) As Boolean
         Dim key As System.Windows.Forms.Keys = keydata
 
-
         Select Case key
             Case Keys.F1
                 Call Clear()
+            Case Keys.F4
+                Call Me.SetMemory()
             Case Keys.F10
                 Call ExitAndClose()
         End Select
@@ -260,11 +361,24 @@ Public Class frmPSTest
         btnLeftClick.Text = "LEFT CLICK"
         btnLeftClick.BackColor = Color.White
 
-        Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + 296, frmPSTest.ActiveForm.Location.Y + 226)
+        ' Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + 296, frmPSTest.ActiveForm.Location.Y + 226)
 
         g.Clear(Color.Empty)
         picTestBox.Refresh()
         picTestBox.Refresh()
+
+        bTestDriftMode = False
+        Me.btnDriftResult.Text = ""
+        Me.btnDriftResult.BackColor = Color.White
+
+    End Sub
+
+    Private Sub SetMemory()
+        Call Clear()
+        Me.txtRememberX.Text = Me.txtXpos.Text
+        Me.txtRememberY.Text = Me.txtYpos.Text
+        Me.btnDriftResult.Text = "TESTING FOR DRIFT"
+        Me.bTestDriftMode = True
     End Sub
 
 
@@ -300,6 +414,7 @@ Public Class frmPSTest
 
     Private Sub frmPSTest_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         bDrawingMode = True
+        Me.Text = "Unicomp Stick Test - " & VERSION
     End Sub
 
     Private Sub btnLeftClick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLeftClick.Click
@@ -310,14 +425,14 @@ Public Class frmPSTest
         bDrawingMode = False
 
         If e.Button = MouseButtons.Right Then
-            Console.WriteLine("RIGHT")
+            '  Console.WriteLine("RIGHT")
 
             btnRightClick.BackColor = Color.Red
             btnRightClick.Text = "DOWN"
         End If
 
         If e.Button = MouseButtons.Left Then
-            Console.WriteLine("LEFT")
+            '  Console.WriteLine("LEFT")
             btnLeftClick.BackColor = Color.Red
             btnLeftClick.Text = "DOWN"
         End If
@@ -329,16 +444,20 @@ Public Class frmPSTest
         bDrawingMode = False
 
         If e.Button = MouseButtons.Right Then
-            Console.WriteLine("RIGHT UP")
+            '  Console.WriteLine("RIGHT UP")
             btnRightClick.BackColor = Color.LimeGreen
             btnRightClick.Text = "RIGHT PASS"
         End If
 
         If e.Button = MouseButtons.Left Then
-            Console.WriteLine("LEFT UP")
+            '   Console.WriteLine("LEFT UP")
             btnLeftClick.BackColor = Color.LimeGreen
             btnLeftClick.Text = "LEFT PASS"
+
         End If
+
+        Me.btnDriftResult.Text = ""
+        Me.btnDriftResult.BackColor = Color.White
 
         bDrawingMode = True
     End Sub
@@ -353,6 +472,20 @@ Public Class frmPSTest
 
     Private Sub txtXpos_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtXpos.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub btnRememberPos_Click(sender As Object, e As EventArgs) Handles btnRememberPos.Click
+
+        Me.SetMemory()
+
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+
+    End Sub
+
+    Private Sub btnDriftResult_Click(sender As Object, e As EventArgs) Handles btnDriftResult.Click
+        Me.btnDriftResult.BackColor = Color.White
     End Sub
 
     Private Sub picTestBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picTestBox.Click
