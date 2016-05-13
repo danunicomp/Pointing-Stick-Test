@@ -286,7 +286,7 @@ Public Class frmPSTest
 
     Private bTestDriftMode As Boolean
 
-    Private VERSION = "1.2.13052016"
+    Private VERSION As String = "1.2.20160513"
 
 
 
@@ -361,7 +361,14 @@ Public Class frmPSTest
         btnLeftClick.Text = "LEFT CLICK"
         btnLeftClick.BackColor = Color.White
 
-        ' Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + 296, frmPSTest.ActiveForm.Location.Y + 226)
+        bDrawingMode = False
+
+
+        ' Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + (Me.Width / 2), frmPSTest.ActiveForm.Location.Y + (Me.Height / 2))
+
+
+
+        ' Console.WriteLine(Me.Location.X)
 
         g.Clear(Color.Empty)
         picTestBox.Refresh()
@@ -370,11 +377,13 @@ Public Class frmPSTest
         bTestDriftMode = False
         Me.btnDriftResult.Text = ""
         Me.btnDriftResult.BackColor = Color.White
+        bDrawingMode = True
 
     End Sub
 
     Private Sub SetMemory()
         Call Clear()
+        ' Threading.Thread.Sleep(3000)
         Me.txtRememberX.Text = Me.txtXpos.Text
         Me.txtRememberY.Text = Me.txtYpos.Text
         Me.btnDriftResult.Text = "TESTING FOR DRIFT"
