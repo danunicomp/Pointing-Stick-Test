@@ -4,7 +4,7 @@
   <description asmv2:iconFile="CONVERT.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Pointing Stick Test" version="1.0.5977.27396" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Pointing Stick Test" version="1.0.5977.27682" language="neutral" processorArchitecture="msil" />
     <commandLine file="Pointing Stick Test.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -44,13 +44,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pointing Stick Test.exe" size="34744">
-      <assemblyIdentity name="Pointing Stick Test" version="1.0.5977.27396" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Pointing Stick Test" version="1.0.5977.27682" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>eAFnQc1Yzz2Q7QULZcbJL+xgHrA=</dsig:DigestValue>
+        <dsig:DigestValue>4iIenZ5u9utMONI5z6Z2HXB5dx0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

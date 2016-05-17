@@ -29,7 +29,7 @@ Public Class frmPSTest
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnRestart As System.Windows.Forms.Button
     Friend WithEvents btnLeftClick As System.Windows.Forms.Button
     Friend WithEvents btnRightClick As System.Windows.Forms.Button
     Friend WithEvents picTestBox As System.Windows.Forms.PictureBox
@@ -50,7 +50,7 @@ Public Class frmPSTest
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPSTest))
         Me.picTestBox = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnRestart = New System.Windows.Forms.Button()
         Me.btnLeftClick = New System.Windows.Forms.Button()
         Me.btnRightClick = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
@@ -84,13 +84,13 @@ Public Class frmPSTest
         Me.picTestBox.TabIndex = 1
         Me.picTestBox.TabStop = False
         '
-        'Button1
+        'btnRestart
         '
-        Me.Button1.Location = New System.Drawing.Point(424, 312)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "F1 - Restart"
+        Me.btnRestart.Location = New System.Drawing.Point(424, 312)
+        Me.btnRestart.Name = "btnRestart"
+        Me.btnRestart.Size = New System.Drawing.Size(75, 23)
+        Me.btnRestart.TabIndex = 2
+        Me.btnRestart.Text = "F1 - Restart"
         '
         'btnLeftClick
         '
@@ -255,7 +255,7 @@ Public Class frmPSTest
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnRightClick)
         Me.Controls.Add(Me.btnLeftClick)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnRestart)
         Me.Controls.Add(Me.picTestBox)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -287,8 +287,6 @@ Public Class frmPSTest
     Private bTestDriftMode As Boolean
 
     Private VERSION As String = "1.2.20160513"
-
-
 
     Private Sub picTestBox_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles picTestBox.MouseMove
         Dim s As Integer
@@ -339,19 +337,6 @@ Public Class frmPSTest
                 Call ExitAndClose()
         End Select
 
-        'If key = Keys.F10 Then
-        '    'If txtBoxBigTLI.Focused Then
-        '    '    'Call ProcessBoxInput()
-        '    '    keydata = Keys.Tab
-        '    'End If
-        '    'If txtPRTSerial.Focused Then
-        '    '    'Call ProcessPrinterInput()
-        '    '    keydata = Keys.Tab
-        '    'End If
-        '    MsgBox("EXIT")
-        'End If
-
-
         Return MyBase.ProcessDialogKey(keydata)
     End Function
 
@@ -363,11 +348,7 @@ Public Class frmPSTest
 
         bDrawingMode = False
 
-
         ' Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + (Me.Width / 2), frmPSTest.ActiveForm.Location.Y + (Me.Height / 2))
-
-
-
         ' Console.WriteLine(Me.Location.X)
 
         g.Clear(Color.Empty)
@@ -391,35 +372,6 @@ Public Class frmPSTest
     End Sub
 
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Call Clear()
-    End Sub
-
-    'Private Sub picTestBox_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles picTestBox.MouseLeave
-    '    'firstrun = True
-    '    'MsgBox(Cursor.Position.Y)
-    '    'MousePosition.X = 935
-
-    '    If bDrawingMode Then
-
-    '        If Cursor.Position.X >= frmPSTest.ActiveForm.Location.X + 600 Then
-    '            Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + 600, Cursor.Position.Y)
-    '        End If
-
-    '        If Cursor.Position.X <= frmPSTest.ActiveForm.Location.X + 14 Then
-    '            Cursor.Position = New Point(frmPSTest.ActiveForm.Location.X + 15, Cursor.Position.Y)
-    '        End If
-
-    '        If Cursor.Position.Y <= frmPSTest.ActiveForm.Location.Y + 50 Then
-    '            Cursor.Position = New Point(Cursor.Position.X, frmPSTest.ActiveForm.Location.Y + 50)
-    '        End If
-
-    '        If Cursor.Position.Y >= frmPSTest.ActiveForm.Location.Y + 395 Then
-    '            Cursor.Position = New Point(Cursor.Position.X, frmPSTest.ActiveForm.Location.Y + 395)
-    '        End If
-    '    End If
-    '    '  Console.WriteLine(Cursor.Position.Y & vbTab & frmPSTest.ActiveForm.Location.Y)
-    'End Sub
 
     Private Sub frmPSTest_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         bDrawingMode = True
@@ -484,17 +436,19 @@ Public Class frmPSTest
     End Sub
 
     Private Sub btnRememberPos_Click(sender As Object, e As EventArgs) Handles btnRememberPos.Click
-
         Me.SetMemory()
-
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
-
+        Call ExitAndClose()
     End Sub
 
     Private Sub btnDriftResult_Click(sender As Object, e As EventArgs) Handles btnDriftResult.Click
         Me.btnDriftResult.BackColor = Color.White
+    End Sub
+
+    Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
+        Call Clear()
     End Sub
 
     Private Sub picTestBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picTestBox.Click
