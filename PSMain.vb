@@ -174,7 +174,7 @@ Public Class frmPSTest
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.txtXpos)
         Me.Panel1.Controls.Add(Me.txtYpos)
-        Me.Panel1.Location = New System.Drawing.Point(200, 312)
+        Me.Panel1.Location = New System.Drawing.Point(193, 312)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(144, 64)
         Me.Panel1.TabIndex = 12
@@ -193,7 +193,7 @@ Public Class frmPSTest
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.txtRememberX)
         Me.Panel2.Controls.Add(Me.txtRememberY)
-        Me.Panel2.Location = New System.Drawing.Point(198, 382)
+        Me.Panel2.Location = New System.Drawing.Point(191, 382)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(146, 31)
         Me.Panel2.TabIndex = 14
@@ -286,7 +286,7 @@ Public Class frmPSTest
 
     Private bTestDriftMode As Boolean
 
-    Private VERSION As String = "1.2.20160513"
+    Private VERSION As String = "1.2.20160523"
 
     Private Sub picTestBox_MouseMove(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles picTestBox.MouseMove
         Dim s As Integer
@@ -449,6 +449,14 @@ Public Class frmPSTest
 
     Private Sub btnRestart_Click(sender As Object, e As EventArgs) Handles btnRestart.Click
         Call Clear()
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 
     Private Sub picTestBox_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picTestBox.Click
